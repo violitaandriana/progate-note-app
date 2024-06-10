@@ -14,6 +14,13 @@ const EditNote = ({ setCurrentPage, editNote, noteId }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.pageTitle}>Ubah Note</Text>
+      <CustomButton 
+          backgroundColor="#efefef"
+          color="black"
+          text="Kembali ke Home"
+          width="50%"
+          onPress={() => setCurrentPage('home')}
+        />
       <CustomTextInput 
         text={newTitle}
         onChange={setNewTitle}
@@ -32,7 +39,7 @@ const EditNote = ({ setCurrentPage, editNote, noteId }) => {
       />
       <View style={styles.spacerTop}>
         <CustomButton 
-          backgroundColor="#0077B6"
+          backgroundColor="black"
           color="#fff"
           text="Simpan"
           width="100%"
@@ -40,15 +47,6 @@ const EditNote = ({ setCurrentPage, editNote, noteId }) => {
             editNote(noteId, newTitle, newDesc);
             setCurrentPage('home');
           }}
-        />
-      </View>
-      <View style={styles.spacerTop}>
-        <CustomButton 
-          backgroundColor="#DDDDDD"
-          color="#203239"
-          text="Kembali ke Home"
-          width="100%"
-          onPress={() => setCurrentPage('home')}
         />
       </View>
     </View>
@@ -63,11 +61,14 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   pageTitle: {
-    marginTop: 20,
-    fontSize: 20,
-    fontWeight: '700',
     textAlign: 'center',
-    color: '#203239',
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 10,
+    fontSize: 20,
+    marginVertical: 25,
+    padding: 5,
   },
   spacerTop: {
     marginTop: 30,

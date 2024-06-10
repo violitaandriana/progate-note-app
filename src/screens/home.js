@@ -7,11 +7,11 @@ const NoteCard = ({ item, setCurrentPage, setNoteId, deleteNote }) => {
   return (
     <View style={styles.card}>
       <Text style={styles.cardTitle}>{item.title}</Text>
-      <Text>{item.desc}</Text>
+      <Text style={styles.cardDesc}>{item.desc}</Text>
       <View style={styles.buttons}>
         <CustomButton
-          backgroundColor="#FFC300"
-          color="#151D3B"
+          backgroundColor="black"
+          color="white"
           text="Ubah"
           fontSize={12}
           width={100}
@@ -38,11 +38,12 @@ const NoteCard = ({ item, setCurrentPage, setNoteId, deleteNote }) => {
 
 const Home = ({ noteList, setCurrentPage, deleteNote, setNoteId }) => (
   <View style={styles.container}>
+    <Text style={styles.title}>Note App</Text>
     <CustomButton
-      backgroundColor="#DDD"
-      color="#203239"
+      backgroundColor="black"
+      color="white"
       text="Tambahkan Note"
-      width="100%"
+      width="50%"
       onPress={() => setCurrentPage('add')}
     />
     <FlatList
@@ -63,24 +64,42 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
+  title: {
+    textAlign: 'center',
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 10,
+    fontSize: 20,
+    marginVertical: 25,
+    padding: 5,
+  },
   card: {
     padding: 10,
     marginVertical: 15,
-    borderColor: '#DDD',
+    borderColor: 'black',
     borderWidth: 2,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   cardTitle: {
     fontWeight: '600',
-    color: '#203239',
+    color: 'black',
     fontSize: 16,
     marginBottom: 5,
   },
+  cardDesc: {
+    paddingVertical: 15,
+    borderTopWidth: 1,
+    borderTopColor: 'black',
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+  },
   buttons: {
-    marginTop: 10,
+    marginTop: 15,
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-end',
+    gap: 4,
   },
 });
 

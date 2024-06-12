@@ -41,6 +41,11 @@ const App = () => {
       title: 'Note pertama',
       desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     },
+    {
+      id: 2,
+      title: 'Note kedua',
+      desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    },
   ]);
   const [noteId, setNoteId] = useState(null);
 

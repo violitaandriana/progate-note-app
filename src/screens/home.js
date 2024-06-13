@@ -85,7 +85,7 @@ const Home = ({ noteList, setCurrentPage, deleteNote, setNoteId }) => {
         }}
         value={text}
         style={styles.searchBar}
-        lightTheme
+        darkTheme
         round
       />
       <CustomButton
@@ -160,8 +160,8 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   searchBar: {
-    marginVertical: 15,
-  },
+    fontSize: 14,
+  }
 });
 
 export default Home;
